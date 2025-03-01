@@ -40,3 +40,108 @@ License
 This project is licensed under the MIT License.
 
 Are you ready to brave the jungle, unlock ancient mysteries, and claim the lost treasure? Play The Lost Ruins now and see if you have what it takes!
+
+
+
+import sys
+import time
+
+inventory = []
+
+def print_pause(message, delay=1):
+    print(message)
+    time.sleep(delay)
+
+def game_over():
+    print_pause("GAME OVER")
+    play_again()
+
+def game_won():
+    print_pause("YOU WIN")
+    play_again()
+
+def play_again():
+    choice = input("Do you want to play again? (yes/no) > ").lower()
+    if choice == "yes":
+        start_game()
+    elif choice == "no":
+        print_pause("Thank you for playing! Goodbye!")
+        sys.exit()
+    else:
+        print_pause("Invalid choice. Please choose 'yes' or 'no'.")
+        play_again()
+
+def intro():
+    print_pause("You find yourself at the edge of an ancient jungle.")
+    print_pause("Legends speak of a legendary treasure hidden deep within.")
+    print_pause("With a map in hand and a sense of adventure, you step into the jungle.")
+
+def first_choice():
+    print_pause("You come across a fork in the path.")
+    print_pause("To the left, you hear the sound of rushing water.")
+    print_pause("To the right, the path leads deeper into the dense jungle.")
+    choice = input("Do you want to go left or right? (left/right) ").lower()
+    if choice == "left":
+        waterfall()
+    elif choice == "right":
+        dense_jungle()
+    else:
+        print_pause("Invalid choice. Please choose 'left' or 'right'.")
+        first_choice()
+
+def waterfall():
+    print_pause("You follow the sound of water and find a beautiful waterfall.")
+    print_pause("Behind the waterfall, you notice a hidden cave.")
+    choice = input("Do you want to enter the cave or go back? (enter/back) ").lower()
+    if choice == "enter":
+        hidden_cave()
+    elif choice == "back":
+        first_choice()
+    else:
+        print_pause("Invalid choice. Please choose 'enter' or 'back'.")
+        waterfall()
+
+def hidden_cave():
+    print_pause("You enter the cave and find ancient carvings on the walls.")
+    print_pause("The carvings tell the story of the legendary treasure.")
+    print_pause("You find a clue that points you further into the jungle.")
+    print_pause("You decide to head back to the fork in the path.")
+    first_choice()
+
+def dense_jungle():
+    print_pause("You venture deeper into the dense jungle.")
+    print_pause("The path becomes more difficult to navigate.")
+    print_pause("You come across a clearing with three paths.")
+    choice = input("Do you want to take the left, middle, or right path? (left/middle/right) ").lower()
+    if choice == "left":
+        snake_pit()
+    elif choice == "middle":
+        ancient_temple()
+    elif choice == "right":
+        quicksand()
+    else:
+        print_pause("Invalid choice. Please choose 'left', 'middle', or 'right'.")
+        dense_jungle()
+
+def snake_pit():
+    print_pause("You take the left path and suddenly fall into a pit of snakes!")
+    print_pause("You manage to escape, but decide to head back to the clearing.")
+    dense_jungle()
+
+def ancient_temple():
+    print_pause("You take the middle path and find an ancient temple.")
+    print_pause("Inside the temple, you find the legendary treasure!")
+    print_pause("Congratulations! You have found the legendary treasure and completed your adventure.")
+    game_won()
+
+def quicksand():
+    print_pause("You take the right path and find yourself sinking into quicksand!")
+    print_pause("You manage to escape, but decide to head back to the clearing.")
+    dense_jungle()
+
+def start_game():
+    intro()
+    first_choice()
+
+if __name__ == "__main__":
+    start_game()
