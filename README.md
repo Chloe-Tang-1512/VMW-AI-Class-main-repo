@@ -19,7 +19,6 @@ Features
 	•	Dynamic Characters – Encounter allies and foes with their own motives.
 	•	Replayability – Discover different story paths and endings.
 
-python main.py
 
 
 
