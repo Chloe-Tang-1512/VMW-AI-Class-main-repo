@@ -1,7 +1,7 @@
 Chloe Tang - Project manager: chloetang1122@gmail.com
 Zander - Backend developer: Zander.xuzan@gmail.com
 Albert Tu - Backend developer: alberttu96@gmail.com
-Kevin 
+Kevin - Backend developer: kevkevh11@gmail.com
 Bowen Whaleman - Technical writer: Whaleswhales507@gmail.com
 
 import sys
