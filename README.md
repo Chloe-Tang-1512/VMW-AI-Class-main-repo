@@ -91,7 +91,7 @@ def snake_pit():
     global health
     print_pause("You take the left path and suddenly fall into a pit of snakes!")
     print_pause("You manage to escape, but you are bitten by a snake and lose 20 health points.")
-    health -= 20
+    health -= 50
     if health <= 0:
         game_over()
     else:
@@ -108,7 +108,7 @@ def quicksand():
     global health
     print_pause("You take the right path and find yourself sinking into quicksand!")
     print_pause("You manage to escape, but you are exhausted and lose 10 health points.")
-    health -= 10
+    health -= 50
     if health <= 0:
         game_over()
     else:
@@ -236,4 +236,8 @@ def start_game():
     first_choice()
 
 if __name__ == "__main__":
-    start_game()
+    choice = input("Do you want to load a saved game? (yes/no) > ").lower()
+    if choice == "yes":
+        load_game()
+    else:
+        start_game()
